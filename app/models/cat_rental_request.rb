@@ -9,9 +9,9 @@ class CatRentalRequest < ApplicationRecord
 
   def overlapping_requests
     CatRentalRequest.where(cat_id: self.cat.id)
-    .where.not(id: self.id)
-    .where(start_date: (self.start_date..self.end_date))
-    .where(end_date: (self.start_date..self.end_date))
+      .where.not(id: self.id)
+      .where(start_date: (self.start_date..self.end_date))
+      .where(end_date: (self.start_date..self.end_date))
   end
 
   def overlapping_approved_requests
@@ -30,7 +30,7 @@ class CatRentalRequest < ApplicationRecord
 
     self.status = "APPROVED"
     self.save
-    overlapping_pending_requests.each {|request| request.deny!}
+    overlapping_pending_requests.each { |request| request.deny! }
   end
 
   def deny!
@@ -38,6 +38,5 @@ class CatRentalRequest < ApplicationRecord
     self.save
   end
 
-  
 
 end
