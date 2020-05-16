@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+body {
+    font-family: sans-serif;
+    color: #333333;
+}
+
+.main {
+    margin: auto;
+    max-width: 768px;
+}
+
+/*form {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    right: 0;*/
+/*    left: 0;*/
+/*}*/
